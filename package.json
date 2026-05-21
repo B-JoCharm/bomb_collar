@@ -1,0 +1,12 @@
+{
+  "name": "velog-discord-bot",
+  "version": "1.0.0",
+  "description": "Velog 새 글 → Discord 알림 + 주간 폭탄 카운트",
+  "scripts": {
+    "daily": "node daily.js",
+    "weekly": "node weekly.js"
+  },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  }
+}

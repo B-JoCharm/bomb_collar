@@ -1,0 +1,64 @@
+name: Velog 포스팅 봇
+
+on:
+  schedule:
+    # 매일 KST 자정 = UTC 15:00 (전날)
+    - cron: "0 15 * * *"
+    # 매주 일요일 KST 자정 주간 정산 = UTC 일요일 15:00 (토요일)
+    # → 실제론 daily와 같은 시각이므로 workflow_dispatch로 구분
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "실행 모드 (daily / weekly)"
+        required: false
+        default: "daily"
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # state.json 커밋용
+
+    steps:
+      - name: 📥 체크아웃
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 📦 의존성 설치
+        run: npm install
+
+      # ── 실행 모드 결정 ─────────────────────────────────────────────────────
+      # 스케줄 실행 시: 일요일이면 weekly도 같이 실행, 나머지는 daily만
+      # 수동 실행 시: input.mode 따름
+      - name: 🗓️ 오늘 요일 확인 (KST)
+        id: day
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%u)  # 1=월 ... 7=일
+          echo "weekday=$DAY" >> $GITHUB_OUTPUT
+
+      - name: 📝 Daily — 새 글 포스팅
+        if: ${{ github.event.inputs.mode != 'weekly' }}
+        env:
+          VELOG_USERNAME: ${{ secrets.VELOG_USERNAME }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node daily.js
+
+      - name: 📊 Weekly — 주간 정산 (일요일 or 수동)
+        if: ${{ steps.day.outputs.weekday == '7' || github.event.inputs.mode == 'weekly' }}
+        env:
+          VELOG_USERNAME: ${{ secrets.VELOG_USERNAME }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node weekly.js
+
+      # ── state.json 변경사항 커밋 ───────────────────────────────────────────
+      - name: 💾 state.json 커밋
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "chore: update state [skip ci]"
+          git push
