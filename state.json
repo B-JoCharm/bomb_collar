@@ -8,7 +8,7 @@
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-2",
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-3"
   ],
-  "bomb_count": 4,
+  "bomb_count": 8,
   "weekly_log": {
     "2026-05-18": true,
     "2026-05-19": true,
@@ -29,6 +29,7 @@
     "2026-06-03": false,
     "2026-06-04": false,
     "2026-06-05": false,
-    "2026-06-06": false
+    "2026-06-06": false,
+    "2026-06-07": false
   }
 }
