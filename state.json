@@ -10,11 +10,11 @@
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-4",
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-5",
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-6",
-    "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-7"
+    "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-7",
+    "https://velog.io/@jesange/poRtion-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-1"
   ],
   "bomb_count": 82,
   "weekly_log": {
-    "2026-06-11": false,
     "2026-06-12": false,
     "2026-06-13": true,
     "2026-06-14": false,
@@ -103,6 +103,7 @@
     "2026-09-06": false,
     "2026-09-07": false,
     "2026-09-08": false,
-    "2026-09-09": false
+    "2026-09-09": false,
+    "2026-09-10": true
   }
 }
