@@ -13,9 +13,8 @@
     "https://velog.io/@jesange/%EC%9E%A0%EC%9E%85-%EC%95%A1%EC%85%98-%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-7",
     "https://velog.io/@jesange/poRtion-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80-1"
   ],
-  "bomb_count": 82,
+  "bomb_count": 87,
   "weekly_log": {
-    "2026-06-14": false,
     "2026-06-15": false,
     "2026-06-16": false,
     "2026-06-17": true,
@@ -104,6 +103,7 @@
     "2026-09-09": false,
     "2026-09-10": true,
     "2026-09-11": false,
-    "2026-09-12": false
+    "2026-09-12": false,
+    "2026-09-13": false
   }
 }
